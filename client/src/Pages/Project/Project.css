@@ -1,0 +1,57 @@
+body{
+    font-family: 'Encode Sans','Fira Sans Extra', sans-serif;
+    color:#706e6e;
+  }
+  /* .writeup{
+      position: relative;
+  } */
+  .name{
+      font-size: 30px;
+      color:#706e6e;
+      margin: 5px;
+
+  }
+.donationBtn{
+        width:120px;
+        margin-right: 100px;
+       background-color:#00d8e7;
+       float: left;
+
+}
+.container-fluid{
+float: left;
+margin:5px;
+}
+
+  /* p{
+      font-size: 20px;
+      text-align: left;
+  } */
+ 
+/* h2{
+    font-size:15px;
+    text-align: left;
+} */
+
+.email,.gitHub,.donationGoal
+,.donationCurrent,.reasonForDonation
+,.donationUsedFor{
+    font-size:15px;
+    text-align: left;
+    
+}
+
+.projectDetails{
+    font-size:20px;
+    text-align:left;
+}
+
+.carousel-inner{
+    width: 100%;
+    height:480px;
+}
+
+.carousel-inner img{
+    width:100%;
+    height:100%;
+}

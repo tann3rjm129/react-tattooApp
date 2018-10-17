@@ -1,0 +1,15 @@
+.search-form{
+    display:flex;
+}
+
+.click{
+    width:50%;
+    color:#00d8e7;
+    display: inline;
+}
+
+.btn-sm{
+background-color:#00d8e7 !important;
+width:30%;
+display: inline;
+}

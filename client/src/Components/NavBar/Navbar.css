@@ -1,0 +1,82 @@
+.navbar{
+    font-family: 'Encode Sans','Fira Sans Extra', sans-serif;
+    /* background-image: url('../.../public/Assets/logo-02.png') */
+}
+nav {
+    width: 100%;
+    font-size: 2rem;
+    color:#706e6e;
+    /* margin-bottom: 50px; */
+    background-color: #f2f2f2;
+    background-repeat:no-repeat !important;
+   float: right !important;
+   
+  }
+  img{
+    /* background-image: url('../Assets/logo-02.png'); */
+    width: 70px;
+    height: 70px;
+  }
+
+  .Devlogo{
+      font-size: 20px;
+      font-style: bold;
+      color: #706e6e;
+     
+  }
+  .Devlogo:hover{
+    color: rgb(75, 73, 73);
+  }
+  
+
+  .nav-link {
+    color:#706e6e;
+    font-size:15px;
+    font-style: bold;
+    align-content: center;
+   
+  }
+
+  
+  .nav-link:hover {
+    /* font-style: initial; */
+    font-style:'Encode Sans bold',bold; 
+    color:#21f4d1;
+  }
+ 
+  
+  nav li {
+    display: inline-block;
+    /* padding: 26px 0;
+    width: 50%;
+    text-align: center; */
+  }
+  
+  /* ul {
+    padding-left: 0px;
+    display: flex;
+    align-items: center;
+  } */
+
+  .logo-container,
+  .nav-container{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+  }
+
+  .nav-container{
+    justify-content: space-evenly;
+  }
+  
+  
+  @media only screen and (max-width: 750px) {
+    #cur-sco,
+    #top-sco {
+      font-size: 2rem;
+    }
+  }
+ 
+  
