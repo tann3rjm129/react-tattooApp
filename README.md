@@ -1,6 +1,6 @@
 # Think-Ink
 
-![alt-text](public/images/readME-images/home.png)
+![alt-text](client/src/Assets/images/MainImage2.png)
 
 ## Description
 
