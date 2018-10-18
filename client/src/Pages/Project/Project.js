@@ -41,7 +41,7 @@ class Project extends React.Component {
     if (!text || !author) {
       return alert("Must include both a comment and an anonymous username in order to post!");
     }
-    API.createPost({ author, text, projectId: this.props.match.params.id })
+    API.createPost({ author, text, artistId: this.props.match.params.id })
       .then(res => {
         this.loadPosts();
 
@@ -83,7 +83,7 @@ class Project extends React.Component {
                       <img
                         className="d-block w-100"
                         src={this.state.users.image1}
-                        alt={this.state.users.projectName}
+                        alt={this.state.users.artistName}
                       />
                     </div>
                     <div className="carousel-item">
@@ -91,7 +91,7 @@ class Project extends React.Component {
                         <img
                           className="d-block w-100"
                           src={this.state.users.image2}
-                          alt={this.state.users.projectName}
+                          alt={this.state.users.artistName}
                         />
                       </div>
                     </div>
@@ -100,7 +100,7 @@ class Project extends React.Component {
                         <img
                           className="d-block w-100"
                           src={this.state.users.image3}
-                          alt={this.state.users.projectName}
+                          alt={this.state.users.artistName}
                         />
                       </div>
                     </div>
@@ -132,34 +132,49 @@ class Project extends React.Component {
                 </div>
                 <div className="container-fluid">
                   <h1 className="name">
-                    <strong>{this.state.users.name}</strong>
+                    <strong>{this.state.users.artistName}</strong>
                   </h1>
 
                   <h2 className="donationGoal">
-                    <strong>Donation Goal:</strong> {this.state.users.donationGoal}
+                    <strong>Shop/independent Artist: </strong> {this.state.users.independent}
                   </h2>
                   <h2 className="donationCurrent">
-                    <strong>Current Donation Level: </strong>{this.state.users.donationCurrent}
+                    <strong>Hourly Rate: </strong> ${this.state.users.hourlyRate}
+                  </h2>
+                  <h2 className="donationCurrent">
+                    <strong>Artist Minimum: </strong> ${this.state.users.artistMin}
+                  </h2>
+                  <h2 className="donationCurrent">
+                    <strong>Preferred Style: </strong> {this.state.users.stylePref}
                   </h2>
                   <h2 className="reasonForDonation">
-                    <strong>Reason Donation Requested:</strong> {this.state.users.reasonForDonation}
+                    <a
+                      href={this.state.users.artistInsta}
+                      target="blank"
+                      className="btn btn-primary btn-md"
+                    > Artist Instagram
+                         <i className="fa fa-github" />
+                    </a>
                   </h2>
                   <h2 className="donationUsedFor">
-                    <strong>What Donation will be used for: </strong>{this.state.users.donationUsedFor}
-                  </h2>
-                  <h2 className="email">
-                    {this.state.users.email}
-                  </h2>
-                  <h2 className="gitHub">
-                    <strong>Github:</strong> {this.state.users.githubLink}
+                    <a
+                      href={this.state.users.shopLink}
+                      target="blank"
+                      className="btn btn-primary btn-md"
+                    > Tattoo Shop
+                         <i className="fa fa-github" />
+                    </a>
                   </h2>
                   <h2 className="projectDetails">
                     {/* <strong>{this.state.users.projectName}</strong> */}
-                    <strong>Project details here:</strong> {this.state.users.synopsis}
+                    <strong>Artist Bio: </strong>
+                    <p>{this.state.users.artistBio}</p>
                   </h2>
-                  <Link to={"/donate/" + this.state.users._id}>
-                    <button className="btn btn-primary btn-md butt">Fund</button>
-                  </Link>
+                  <h2 className="projectDetails">
+                    {/* <strong>{this.state.users.projectName}</strong> */}
+                    <strong>Additional Comments: </strong>
+                    <p>{this.state.users.artistComments}</p>
+                  </h2>
                 </div>
               </div>
             </div>
@@ -172,7 +187,7 @@ class Project extends React.Component {
               <CommentWindow comments={this.state.comments} />
             </div>
             <div className="col-md-4">
-              <CommentForm projectId={this.props.match.params.id} handleSubmit={this.handleCommentSubmit} />
+              <CommentForm artistId={this.props.match.params.id} handleSubmit={this.handleCommentSubmit} />
             </div>
           </div>
         </div>

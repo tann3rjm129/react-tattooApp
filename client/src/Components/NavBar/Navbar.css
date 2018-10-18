@@ -18,12 +18,12 @@ nav {
     height: 70px;
   }
 
-  .Devlogo{
+  .Navbar-logo{
       font-size: 20px;
       font-style: bold;
-      color: #706e6e;
      
   }
+  
   .Devlogo:hover{
     color: rgb(75, 73, 73);
   }

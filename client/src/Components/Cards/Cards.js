@@ -3,7 +3,7 @@ import React from "react";
 
 const Cards = props => (
 
-    <div className="cardholder">
+    <div>
         {props.children}
     </div>
 );

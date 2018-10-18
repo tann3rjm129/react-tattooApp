@@ -5,31 +5,31 @@ import Cards from '../../Components/Cards';
 
 import API from '../utils/API';
 import { Link } from 'react-router-dom';
-// import Carousel from ".././Components/Carousel";
 // import Container from '../../Components/Container';
 // import Row from '../../Components/Row';
-// import cards from '../../cards.json';
 // import Title from '../../Components/Title';
 // import Project from '../../Pages/Project';
-// import Footer from '../../Components/Footer';
 import Jumbotron from '../../Components/Jumbotron';
 
 class Home extends Component {
   state = {
     users: [],
-    name: '',
-    projectName: '',
-    githubLink: '',
-    email: '',
-    synopsis: '',
+    artistName: '',
+    location: '',
+    artistNumber: '',
+    independent: '',
+    shopName: '',
+    hourlyRate: '',
+    artistMin: '',
+    stylePref: '',
     image1: '',
     image2: '',
     image3: '',
-    donationGoal: '',
-    reasonForDonation: '',
-    donationUsedFor: '',
-    donationCurrent: '',
-    donationAdded: ''
+    artistInsta: '',
+    shopLink: '',
+    artistBio: '',
+    artistComments: ''
+
   };
 
   componentDidMount() {
@@ -42,18 +42,21 @@ class Home extends Component {
         res =>
           this.setState({
             users: res.data,
-            name: '',
-            projectName: '',
-            githubLink: '',
-            email: '',
-            synopsis: '',
+            artistName: '',
+            location: '',
+            artistNumber: '',
+            independent: '',
+            shopName: '',
+            hourlyRate: '',
+            artistMin: '',
+            stylePref: '',
             image1: '',
             image2: '',
             image3: '',
-            donationGoal: '',
-            reasonForDonation: '',
-            donationUsedFor: '',
-            donationCurrent: ''
+            artistInsta: '',
+            shopLink: '',
+            artistBio: '',
+            artistComments: ''
           })
         // console.log(users);
       )
@@ -65,7 +68,7 @@ class Home extends Component {
       <div className="App">
         <Jumbotron />
         <div className="container">
-          <h2>MARKETPLACE</h2>
+          <h2>Welcome to Think Ink. A catalog of tattoo artists at your fingertips.</h2>
         </div>
         {/* } // Map over this.state.friends and render a FriendCard component for each friend object
         {/* <Container> */}
@@ -77,63 +80,41 @@ class Home extends Component {
                 <Cards
                   id={users.id}
                   key={users.id}
+                  artistName={users.artistName}
+                  location={users.location}
+                  artistNumber={users.artistNumber}
+                  independent={users.independent}
+                  shopName={users.shopName}
+                  hourlyRate={users.hourlyRate}
+                  artistMin={users.artistMin}
+                  stylePref={users.stylePref}
                   image1={users.image1}
-                  projectName={users.projectName}
-                  synopsis={users.synopsis}
-                  githubLink={users.githubLink}
-                  name={users.name}
-                  email={users.email}
+                  image2={users.image1}
+                  image3={users.image1}
+                  artistInsta={users.artistInsta}
+                  shopLink={users.shopLink}
+                  artistBio={users.artistBio}
+                  artistComments={users.artistComments}
+
                 >
-                  <div
-                    className="image-flip"
-                    ontouchstart="this.classList.toggle('hover');"
-                  >
-                    <div className="mainflip">
-                      <div className="frontside">
-                        <div className="card">
-                          <div className="card-body text-center">
-                            <p>
-                              <img className=" img-fluid" src={users.image1} />
-                            </p>
-                            <h4 className="card-title">{users.name}</h4>
-                            <p className="card-text">
-                              View the project and fund it your liking.
-                            </p>
-                            <a href="#" className="btn btn-primary btn-sm">
-                              <i className="fa fa-plus" />
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="backside">
-                        <div className="card">
-                          <div className="card-body text-center mt-4">
-                            <h4 className="card-title">{users.projectName}</h4>
-                            <p className="card-text">{users.synopsis}</p>
-                            <ul className="list-inline">
-                              <li className="list-inline-item">
-                                <a
-                                  href={users.githubLink}
-                                  target="blank"
-                                  className="btn btn-primary btn-sm"
-                                >
-                                  <i className="fa fa-github" />
-                                </a>
-                              </li>
-                              <li className="list-inline-item">
-                                <Link to={'/users/' + users._id}>
-                                  <a
-                                    href="#"
-                                    className="btn btn-primary btn-sm"
-                                  >
-                                    <i className="fa fa-eye" />
-                                  </a>
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+
+                  <div className="card">
+                    <div className="card-body text-center">
+                      <p>
+                        <img className=" img-fluid" src={users.image1} alt={users.artistName} />
+                      </p>
+                      <h4 className="card-title">{users.artistName}</h4>
+                      <p className="card-text">Preferred Style: {users.stylePref}</p>
+                      <p className="card-text">Hourly Rate: ${users.hourlyRate}</p>
+                      <p className="card-text">Minimum Rate: ${users.artistMin}</p>
+                      <Link to={'/users/' + users._id}>
+                        <button
+                          className="btn btn-primary btn-sm"
+                        > See More
+                                      <i className="fa fa-eye" />
+                        </button>
+                      </Link>
+
                     </div>
                   </div>
                 </Cards>
@@ -141,7 +122,6 @@ class Home extends Component {
             ))}
           </div>
         </div>
-        {/* </ div> */}
       </div>
     );
   }

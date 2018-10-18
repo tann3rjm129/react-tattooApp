@@ -1,16 +1,15 @@
 import React from 'react';
 import './Navbar.css';
-import Search from '../Search';
-// import NewProject from '../NewProject/NewProject';
+// import Search from '../Search';
 
 function Navbar(props) {
     return (
         <nav className="navbar navbar-light bg-light">
             <ul className='logo-container'>
                 <li>
-                    <a className="Devlogo" href="/">
-                        <img src={require("../../Assets/logo-02.png")} alt=""></img>
-                        DevHub </a>
+                    <a className="Navbar-logo" href="/">
+                        <img src={require("../../Assets/images/ThinkInkLogo.png")} alt=""></img>
+                    </a>
                 </li>
             </ul>
             <ul className='nav-container'>
@@ -21,9 +20,7 @@ function Navbar(props) {
                 <li>
                     <a className="nav-link justify-content-end" href="/account/signup">Log In</a>
                 </li>
-                <li className="search">
-                    <Search />
-                </li>
+
 
             </ul>
         </nav >
